@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { data } from "react-router";
+
 
 export interface IChat {
   friend_name: string;
