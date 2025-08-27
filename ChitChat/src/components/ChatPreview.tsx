@@ -19,7 +19,7 @@ export default function ChatPreview({ chat }: IChatPreviewProps) {
         {/* img Col */}
         <div className="w-[100%] h-[100%] flex items-center justify-center">
           <img
-            src="../assets/contactImg.png"
+            src="/contactImg.png"
             alt="contact Image"
             width={60}
             className="rounded-full"
