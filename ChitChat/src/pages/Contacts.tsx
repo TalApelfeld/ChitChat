@@ -5,8 +5,11 @@ import Contact from "../components/Contact";
 import { v4 as uuidv4 } from "uuid";
 import { useOutletContext } from "react-router";
 
-const host =
-  location.hostname === "localhost" ? "localhost" : location.hostname;
+// const host =
+//   location.hostname === "localhost" ? "localhost" : location.hostname;
+
+// const urlDev = `http://${host}:3000/rooms`;
+const urlProd = "https://chitchat-znxw.onrender.com/rooms";
 
 export default function Contacts() {
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +22,7 @@ export default function Contacts() {
 
   async function createRoomInDB() {
     try {
-      const res = await fetch(`http://${host}:3000/rooms`, {
+      const res = await fetch(urlProd, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

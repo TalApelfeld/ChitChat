@@ -33,7 +33,11 @@ const sql = neon(process.env.DATABASE_URL as string);
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://10.0.0.10:5173"], // <- no trailing slash
+    origin: [
+      "http://localhost:5173",
+      "http://10.0.0.10:5173",
+      "https://chitchat-hhye.onrender.com",
+    ], // <- no trailing slash
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -163,7 +167,11 @@ const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: ["http://localhost:5173", "http://10.0.0.10:5173"],
+    origin: [
+      "http://localhost:5173",
+      "http://10.0.0.10:5173",
+      "https://chitchat-hhye.onrender.com",
+    ],
     credentials: true,
   },
 });

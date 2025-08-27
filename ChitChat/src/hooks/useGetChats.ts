@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 export interface IChat {
   friend_name: string;
   id: string;
@@ -8,15 +7,18 @@ export interface IChat {
   room_id: string;
 }
 
-const host =
-  location.hostname === "localhost" ? "localhost" : location.hostname;
+// const host =
+//   location.hostname === "localhost" ? "localhost" : location.hostname;
+
+// const urlDev = `http://${host}:3000/chats`;
+const urlProd = "https://chitchat-znxw.onrender.com/chats";
 
 export default function useGetChats(user: string) {
   const [chats, setChats] = useState<IChat[]>([]);
 
   async function getChats() {
     try {
-      const res = await fetch(`http://${host}:3000/chats`, {
+      const res = await fetch(urlProd, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

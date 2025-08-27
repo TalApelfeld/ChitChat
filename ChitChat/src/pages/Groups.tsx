@@ -16,8 +16,11 @@ export interface IGroup {
   name5?: string;
 }
 
-const host =
-  location.hostname === "localhost" ? "localhost" : location.hostname;
+// const host =
+//   location.hostname === "localhost" ? "localhost" : location.hostname;
+
+// const urlDev = `http://${host}:3000/addGroup`;
+const urlProd = "https://chitchat-znxw.onrender.com/addGroup";
 
 export default function Groups() {
   const [showModal, setShowModal] = useState(false);
@@ -34,7 +37,7 @@ export default function Groups() {
     try {
       setInputGroupName("");
       setShowModal(false);
-      const res = await fetch(`http://${host}:3000/addGroup`, {
+      const res = await fetch(urlProd, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +61,7 @@ export default function Groups() {
     try {
       setInputGroupName("");
       setShowModal(false);
-      const res = await fetch(`http://${host}:3000/groups`, {
+      const res = await fetch(urlProd, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

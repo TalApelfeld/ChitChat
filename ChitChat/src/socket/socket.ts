@@ -1,10 +1,11 @@
 import { io, Socket } from "socket.io-client";
 
-const URL =
-  location.hostname === "localhost"
-    ? (import.meta.env.VITE_SOCKET_PC_URL as string)
-    : `ws://${location.hostname}:3000`;
+// const URL =
+// location.hostname === "localhost"
+// ? (import.meta.env.VITE_SOCKET_PC_URL as string)
+// : `ws://${location.hostname}:3000`;
 
+const URL = "https://chitchat-znxw.onrender.com";
 // Configure retries and timeouts to be robust during dev
 export const socket: Socket = io(URL, {
   withCredentials: true,

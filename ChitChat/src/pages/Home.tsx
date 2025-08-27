@@ -6,8 +6,11 @@ import { NavLink, useOutletContext } from "react-router";
 import type { IChat } from "../hooks/useGetChats";
 import useGetChats from "../hooks/useGetChats";
 
-const host =
-  location.hostname === "localhost" ? "localhost" : location.hostname;
+// const host =
+//   location.hostname === "localhost" ? "localhost" : location.hostname;
+
+// const urlDev = `http://${host}:3000/rooms`;
+const urlProd = "https://chitchat-znxw.onrender.com/rooms";
 
 export default function Home() {
   const [showAddContact, setShowAddContact] = useState(false);
@@ -36,7 +39,7 @@ export default function Home() {
 
   async function createRoomInDB() {
     try {
-      const res = await fetch(`http://${host}:3000/rooms`, {
+      const res = await fetch(urlProd, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
