@@ -93,7 +93,7 @@ export default function Home() {
       {/* Modal */}
       {showAddContact && (
         <div
-          className="fixed top-[50%] -translate-y-1/2 left-[50%] -translate-x-1/2 z-10 w-[350px] h-[500px]
+          className="fixed top-[50%] -translate-y-1/2 left-[50%] -translate-x-1/2 z-10 w-[350px] 
          bg-violet-500 flex flex-col items-center gap-4 text-center rounded-2xl p-4"
         >
           <h1 className="text-white text-2xl">
@@ -110,11 +110,11 @@ export default function Home() {
             }}
           />
 
-          <div className="bg-blue-400 mb-4">{` http://localhost:5173/room/?room=${room}&&name=${user}`}</div>
-          <div className="bg-blue-400">{` http://10.0.0.10:5173/room/?room=${room}&&name=${user}`}</div>
+          {/* <div className="bg-blue-400 mb-4">{` http://localhost:5173/room?room=${room}&name=${user}`}</div>
+          <div className="bg-blue-400">{` http://10.0.0.10:5173/room?room=${room}&&name=${user}`}</div> */}
 
           <NavLink
-            to={`/room/?room=${room}&&name=${inputFriendName}`}
+            to={`/room?room=${room}&name=${inputFriendName}`}
             className="px-4 py-4 bg-amber-100 rounded-[10px]"
             onClick={createRoomInDB}
           >

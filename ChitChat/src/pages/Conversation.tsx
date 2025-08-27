@@ -66,7 +66,7 @@ export default function Conversation() {
         <div className="fixed top-0 w-[250px] h-[70px]  flex items-center">
           {/* Return Btn */}
           <NavLink to={"/allChats"}>
-            <div className="p-3 bg to-blue-200">
+            <div className="p-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
